@@ -15,11 +15,8 @@ if ! command -v ollama &> /dev/null; then
   curl -fsSL https://ollama.com/install.sh | sh
 fi
 
-# Pull the model if not already pulled
-if ! ollama list | grep "tinyllama" > /dev/null; then
-  echo "Model $MODEL_NAME not found. Pulling..."
-  sudo -u ubuntu ollama pull "$MODEL_NAME"
-fi
+sudo ollama pull "$MODEL_NAME"
+
 # Update the systemd service to listen on all interfaces
 echo "Updating ollama.service to listen on 0.0.0.0..."
 
