@@ -16,7 +16,7 @@ if ! command -v ollama &> /dev/null; then
 fi
 
 # Pull the model if not already pulled
-if ! ollama list | grep "tinyllama"> /dev/null; then
+if ! ollama list | grep "tinyllama" > /dev/null; then
   echo "Model $MODEL_NAME not found. Pulling..."
   sudo -u ubuntu ollama pull "$MODEL_NAME"
 fi
