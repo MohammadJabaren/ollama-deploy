@@ -10,10 +10,7 @@ cd "$PROJECT_DIR"
 echo "Starting deployment..."
 
 # Install Ollama if not already installed
-if ! command -v ollama &> /dev/null; then
-  echo "Ollama not found. Installing..."
-  curl -fsSL https://ollama.com/install.sh | sh
-fi
+
 echo "pull tinyllama"
 sudo ollama pull "$MODEL_NAME"
 
