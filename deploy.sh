@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
-#test
-SERVICE_FILE="/etc/systemd/system/ollama.service"
+
 PROJECT_DIR="$1"
 cd "$PROJECT_DIR"
 
