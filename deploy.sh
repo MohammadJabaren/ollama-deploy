@@ -10,9 +10,12 @@ cd "$PROJECT_DIR"
 echo "Starting deployment..."
 
 # Install Ollama if not already installed
-
+if ! command -v ollama &> /dev/null; then
+  echo "Ollama not found. Installing..."
+  curl -fsSL https://ollama.com/install.sh | sh
+fi
 echo "pull tinyllama"
-sudo ollama pull "$MODEL_NAME"
+ollama pull tinyllama
 
 # Update the systemd service to listen on all interfaces
 echo "Updating ollama.service to listen on 0.0.0.0..."
