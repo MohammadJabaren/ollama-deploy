@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-
+#test
 MODEL_NAME="tinyllama"
 SERVICE_FILE="/etc/systemd/system/ollama.service"
 USER="ubuntu"
