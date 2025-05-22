@@ -3,14 +3,12 @@ Description=Ollama Service
 After=network-online.target
 
 [Service]
-ExecStart=/usr/bin/env OLLAMA_HOST=0.0.0.0 /usr/local/bin/ollama serve
+ExecStart=/usr/bin/env OLLAMA_HOST=0.0.0.0 OLLAMA_ORIGINS="*" /usr/local/bin/ollama serve
 User=ollama
 Group=ollama
 Restart=always
 RestartSec=3
-Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin>
+Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 [Install]
-WantedBy=default.target
-
-
+WantedBy=default.target 
