@@ -11,8 +11,8 @@ if ! command -v ollama &> /dev/null; then
   echo "Ollama not found. Installing..."
   curl -fsSL https://ollama.com/install.sh | sh
 fi
-echo "pull tinyllama"
-ollama pull tinyllama
+echo "pull phi"
+ollama pull phi
 
 # Update the systemd service to listen on all interfaces
 echo "Updating ollama.service to listen on 0.0.0.0..."
